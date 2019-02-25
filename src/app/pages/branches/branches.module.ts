@@ -1,8 +1,8 @@
-import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatCardModule, MatIconModule, MatListModule} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
+import {GithubModule} from '../../blocks/api/github';
 
 import {BranchesComponent} from './branches.component';
 
@@ -18,7 +18,7 @@ import {BranchesComponent} from './branches.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    HttpClientModule
+    GithubModule
   ]
 })
 export class BranchesModule {

@@ -1,6 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Component} from '@angular/core';
 import {AppIconService} from 'app/blocks/icon';
+import {GithubService} from '../../blocks/api/github/github.service';
 
 @Component({
   selector: 'app-repos',
@@ -10,7 +11,7 @@ export class ReposComponent {
   public repos;
   public searchModel;
 
-  constructor(private readonly http: HttpClient, private readonly icon: AppIconService) {
+  constructor(private readonly http: HttpClient, private readonly icon: AppIconService, private github: GithubService) {
     icon.addShapes({
       close: 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'
     });
@@ -18,7 +19,7 @@ export class ReposComponent {
 
   public search(e) {
     if (e.key === 'Enter') {
-      this.http.get(`https://api.github.com/search/repositories?q=${this.searchModel}`)
+      this.github.getRepositories(this.searchModel)
         .subscribe((data) => this.repos = data);
     }
   }
