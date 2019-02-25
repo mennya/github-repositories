@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const http = require('http');
-const dist = __dirname + '/../dist';
+const dist = __dirname + '/dist';
 const PORT = process.env.PORT || 3400;
 
 app.use(function (req, res, next) {
