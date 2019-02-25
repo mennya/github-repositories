@@ -8,10 +8,14 @@ import {MatButtonModule, MatCardModule, MatCommonModule, MatFormFieldModule, Mat
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import {BranchesComponent} from './components/branches/branches.component';
+import {ReposComponent} from './components/repos/repos.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BranchesComponent,
+    ReposComponent
   ],
   imports: [
     BrowserModule,

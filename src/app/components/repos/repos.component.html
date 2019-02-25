@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-header>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput placeholder="Search" (keyup)="search($event)" [(ngModel)]="searchModel">
+      <mat-hint align="start"><strong>Press enter to search</strong></mat-hint>
+    </mat-form-field>
+
+    <mat-nav-list>
+      <mat-list-item *ngFor="let repo of repos?.items" [routerLink]="['/', repo.owner.login, repo.name]">>
+        <img matListAvatar src="{{repo.owner.avatar_url}}">
+        <h3 mat-line>{{repo.name}}</h3>
+        <p mat-line>
+          {{repo.description}}
+        </p>
+
+      </mat-list-item>
+    </mat-nav-list>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
