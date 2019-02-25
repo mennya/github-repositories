@@ -2,6 +2,9 @@
   <mat-card-content>
     <mat-form-field>
       <input matInput placeholder="Search" (keyup)="search($event)" [(ngModel)]="searchModel">
+      <button mat-button *ngIf="searchModel" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+        <mat-icon appIcon="close"></mat-icon>
+      </button>
       <mat-hint align="start"><strong>Press enter to search</strong></mat-hint>
     </mat-form-field>
 

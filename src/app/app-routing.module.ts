@@ -1,15 +1,25 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {BranchesComponent} from './pages/branches/branches.component';
-import {ReposComponent} from './pages/repos/repos.component';
+import {BaseLayoutComponent} from './layouts/base-layout';
+import {BranchesComponent} from './pages/branches';
+import {ReposComponent} from './pages/repos';
+import {WelcomeComponent} from './pages/welcome';
 
 const routes: Routes = [
   {
-    path: '', component: ReposComponent
-  },
-  {
-    path: ':login/:repo', component: BranchesComponent
+    path: '', component: BaseLayoutComponent,
+    children: [
+      {
+        path: '', component: WelcomeComponent
+      },
+      {
+        path: 'repos', component: ReposComponent
+      },
+      {
+        path: ':login/:repo', component: BranchesComponent
+      }
+    ]
   }
 ];
 

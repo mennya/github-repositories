@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <button mat-button mat-icon-button (click)="toggle()">
+    <mat-icon appIcon="menu"></mat-icon>
+  </button>
+  Github repos
+  <span fxFlex></span>
+  <button mat-button mat-icon-button>
+    <mat-icon appIcon="exit_to_app"></mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [opened]="isOpened"
+    [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [fixedInViewport]="mobileQuery.matches"
+    fixedTopGap="56"
+  >
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
+
+  <section class="sidenav-content">
+    <router-outlet></router-outlet>
+  </section>
+
+</mat-sidenav-container>
