@@ -1,19 +1,17 @@
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-branches',
-  templateUrl: './branches.component.html',
-  styleUrls: ['./branches.component.scss']
+  templateUrl: './branches.component.html'
 })
 export class BranchesComponent implements OnInit {
-  public readonly options = {headers: new HttpHeaders({'Content-Type': 'application/json;charset=UTF-8'})};
   public login;
   public repo;
   public branches;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {
+  constructor(private readonly http: HttpClient, private readonly route: ActivatedRoute) {
 
   }
 
@@ -21,7 +19,6 @@ export class BranchesComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.repo = params.repo;
       this.login = params.login;
-      console.log(params);
       this.getBranches();
     });
   }

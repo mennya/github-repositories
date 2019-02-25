@@ -1,7 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {BranchesComponent} from './components/branches/branches.component';
-import {ReposComponent} from './components/repos/repos.component';
+
+import {BranchesComponent} from './pages/branches/branches.component';
+import {ReposComponent} from './pages/repos/repos.component';
 
 const routes: Routes = [
   {

@@ -3,15 +3,13 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-repos',
-  templateUrl: './repos.component.html',
-  styleUrls: ['./repos.component.scss']
+  templateUrl: './repos.component.html'
 })
 export class ReposComponent {
   public repos;
   public searchModel;
 
-  constructor(private http: HttpClient) {
-
+  constructor(private readonly http: HttpClient) {
   }
 
   public search(e) {
