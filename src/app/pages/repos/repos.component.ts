@@ -1,14 +1,14 @@
 import {HttpClient} from '@angular/common/http';
 import {Component} from '@angular/core';
 import {AppIconService} from 'app/blocks/icon';
-import {GithubService} from '../../blocks/api/github/github.service';
+import {GithubService, IRepositories} from '../../blocks/api/github/github.service';
 
 @Component({
   selector: 'app-repos',
   templateUrl: './repos.component.html'
 })
 export class ReposComponent {
-  public repos;
+  public repos: IRepositories;
   public searchModel;
 
   constructor(private readonly http: HttpClient, private readonly icon: AppIconService, private github: GithubService) {
@@ -26,6 +26,6 @@ export class ReposComponent {
 
   public clear() {
     this.searchModel = '';
-    this.repos = [];
+    this.repos = {};
   }
 }

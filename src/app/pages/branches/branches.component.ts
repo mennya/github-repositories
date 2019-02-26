@@ -2,7 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
-import {GithubService} from '../../blocks/api/github/github.service';
+import {GithubService, IBranches} from '../../blocks/api/github/github.service';
 
 @Component({
   selector: 'app-branches',
@@ -11,7 +11,7 @@ import {GithubService} from '../../blocks/api/github/github.service';
 export class BranchesComponent implements OnInit {
   public login;
   public repo;
-  public branches;
+  public branches: IBranches[];
 
   constructor(private readonly http: HttpClient, private readonly route: ActivatedRoute, private github: GithubService) {
 
